@@ -5,6 +5,6 @@ public class Monster {
 	String name;
 	int level;
 	int hp;
-	int Weapon;
+	Weapon weapon;
 
 }

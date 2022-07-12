@@ -5,5 +5,5 @@ public class Weapon {
 	
 	String name;
 	int damage;
-	int inchant = 1;
+	int inchant;
 }

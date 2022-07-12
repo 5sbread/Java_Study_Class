@@ -17,9 +17,8 @@ public class Method1 {
 	//메서드명 : 각자 생성, 첫글자는 소문자로
 	//매개변수 : 생략
 	public void test() {
-		System.out.println("Test Method 실행");
-	//---------------	
-		mt1 = 10;
+		System.out.println("Test Method 실행");	
+		int num = 10;
 		
 		System.out.println(num)
 		

@@ -19,16 +19,16 @@ public class Ex1Main {
 		Student [] students = new Student [3];
 		
 		
-		for(int i=0; i<3; I++);
+		for(int i=0; i<3; i++) {
 			st = new Student();
 			System.out.println("이름을 입력하세요.");
 			st.name = sc.next();
 			students[i]=st; //student 타입을 모으기 위해서 st 넣어주기
 	}
 	
-		System.out.println(student[0].name);
-		System.out.println(student[1].name);
-		System.out.println(student[2].name);
+		System.out.println(students[0].name);
+		System.out.println(students[1].name);
+		System.out.println(students[2].name);
 		
 		System.out.println(st.name);
 		
