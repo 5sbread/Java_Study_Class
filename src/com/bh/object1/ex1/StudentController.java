@@ -14,6 +14,14 @@ public class StudentController {
 	
 	public void start () {
 		Scanner sc = new Scanner(System.in);
+
+		//객체 생성
+		StudentService studentService = new StudentService();
+		StudentView studentview = new StudentView();
+		StudentService stuService = new StudentService();
+		
+		//변수 선언
+		Student [] students = null;
 		
 		boolean check = true;
 		
@@ -28,13 +36,21 @@ public class StudentController {
 			
 			switch (select) {
 			case 1:
-				System.out.println("1");
+				students = studentService.makeStudents();
+				//1번을 누르면 값이 null이 아니게
 				break;
 			case 2:
-				System.out.println("2");
+				studentview.view(students);
+				//students를 통해 데이터 보내기
 				break;
 			case 3:
-				System.out.println("3");
+				Student student = studentService.findStudent(students);
+				if(student != null) {
+					studentview.view(student);
+				}else {
+					studentview.view("해당하는 학생 정보가 존재하지 않습니다.");
+				}
+				
 				break;
 			case 4:
 				System.out.println("4");

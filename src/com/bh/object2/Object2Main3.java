@@ -18,13 +18,13 @@ public class Object2Main3 {
 		
 		m3.info("영히", 24, "0hee@gmail.com"); //매개변수 호출
 		
-		Member member = new Member();
+		Member member = new Member(); //멤버타입 member 변수 선언 (선언하는 데이터타입을 담을 수 있을 만큼 메모리 할당)
 		member.name = "bh";
-		member.age = 31;
+		member.age = 31; //
 		member.email = "bbh@gmail.com";
 		member.num = 01000000000;
 		m3.info2(member);
-		
+		System.out.println(member.age); //30아니고
 		
 	}
 
