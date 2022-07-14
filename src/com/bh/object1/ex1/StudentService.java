@@ -1,9 +1,23 @@
 package com.bh.object1.ex1;
 
 import java.util.Scanner;
+import java.util.jar.Attributes.Name;
 
 public class StudentService {
 
+	public StudentService() {
+		sc = new Scanner(System.in);
+	}
+	
+	//addstudent
+	//학생들의 정보를 받아서
+	//학생 한명 추가
+	//학생 정보들을 리턴
+	public void addstudent (Student [] students) {
+		String [] nameCopy = new String [student.l1];
+		
+	}
+	
 	//findStudent
 	//검색하고 싶은 학생의 번호를 입력받아서
 	//같은 번호의 학생을 찾아서 그 학생 한명을 리턴
@@ -56,8 +70,9 @@ public class StudentService {
 			System.out.println(i+1+"번째 학생의 수학 점수를 입력하세요.");
 			student.math = sc.nextInt();
 			
-			student.total = student.kor + student.eng + student.math;
-			student.avg = student.total/3.0;
+//			student.total = student.kor + student.eng + student.math;
+//			student.avg = student.total/3.0;
+			student.setTotal();
 			students[i]=student;
 			
 			System.out.println(i+1+"번째 학생의 총점 : "+student.total+" | 평균 : "+student.avg);

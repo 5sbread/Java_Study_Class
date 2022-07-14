@@ -3,26 +3,31 @@ package com.bh.object1.ex1;
 import java.util.Scanner;
 
 public class StudentController {
-	
-	//start 메서드 선언
+		
+		Scanner sc = new Scanner(System.in);
+
+		//객체 생성
+		StudentService studentService = new StudentService();
+		StudentView studentview = new StudentView();
+		
+		//변수 선언
+		Student [] students = null;
+
+		public StudentController() {
+			sc = new Scanner(System.in);
+			studentview = new StudentView();
+			studentService = new StudentService();
+		}	//studentConlloer는 sv, ss에 의존적 (참조가 필요)
+			
+		
+		public void start () {
+			//start 메서드 선언
 //	System.out.println("1. 학생정보 입력");
 //	System.out.println("2. 학생정보 조회");
 //	System.out.println("3. 학생정보 검색");
 //	System.out.println("4. 학생정보 삭제");
 //	System.out.println("5. 학생정보 추가");
 //	System.out.println("6. 프로그램 종료"); 
-	
-	public void start () {
-		Scanner sc = new Scanner(System.in);
-
-		//객체 생성
-		StudentService studentService = new StudentService();
-		StudentView studentview = new StudentView();
-		StudentService stuService = new StudentService();
-		
-		//변수 선언
-		Student [] students = null;
-		
 		boolean check = true;
 		
 		while(check){
