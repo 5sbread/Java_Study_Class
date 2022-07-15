@@ -9,15 +9,46 @@ public class StudentService {
 		sc = new Scanner(System.in);
 	}
 	
+	
+//-----------------------------------	
+	//removestudent
+	//학생들의 정보를 받아서
+	//삭제하려는 학생의 번호를 입력
+	//학생의 번호와 일치하는 학생을 삭제
+	//남은 학생 정보 리턴
+	public void removestudent (Student[]students) {
+		System.out.println("삭제할 학생의 번호를 입력하세요.");
+		int select = sc.nextInt();
+		boolean flag = false;
+		String [] getNameCopy = null;
+		int [] getNumCopy = null;
+		int [] getKorCopy = null;
+		int [] getEngCopy = null;
+		int [] getMathCopy = null;
+		int [] getTotalCopy = null;
+		
+		for(int i=0; i<students.length; i++) {
+			if(select == getNum(i)){
+				flag =! flag;
+				break;
+			}
+		}
+		
+		
+	}
+	
+	
+//-----------------------------------	
 	//addstudent
 	//학생들의 정보를 받아서
 	//학생 한명 추가
 	//학생 정보들을 리턴
 	public void addstudent (Student [] students) {
-		String [] nameCopy = new String [student.l1];
-		
-	}
 	
+		
+	}  
+	
+//-----------------------------------	
 	//findStudent
 	//검색하고 싶은 학생의 번호를 입력받아서
 	//같은 번호의 학생을 찾아서 그 학생 한명을 리턴
@@ -32,7 +63,7 @@ public class StudentService {
 		Student student = null; //리턴하려는 학생 데이터
 		
 		for(int i=0; i<students.length; i++) { //원하는 번호가 나올 때까지 학생 한명한명 비교
-			if(num == students[i].num) {
+			if(num == students[i].getNum()) {
 				student = students[i];
 				break; //해당 학생을 찾으면 종료
 			}else {
@@ -42,13 +73,13 @@ public class StudentService {
 		return student; //못찾으면 18라인의 null 값이 그대로 리턴
 	}
 	
+//-----------------------------------	
 	//makeStudents 메서드
 	//인원 수 입력 받기
 	//학생 수만큼 정보 입력받기
 	//이름 번호 국어 영어 수학 총점 평균
 	//학생정보를 리턴
 	//-> StudentController에서 사용
-	
 	public Student [] makeStudents() {
 		
 		System.out.println("학생 수를 입력하세요.");
@@ -60,22 +91,22 @@ public class StudentService {
 			Student student = new Student(); //학생 한명 만들기
 			
 			System.out.println(i+1+"번째 학생 이름을 입력하세요.");
-			student.name = sc.next();
+			student.setName(sc.next());
 			System.out.println(i+1+"번째 학생의 번호를 입력하세요.");
-			student.num = sc.nextInt();
+			student.setNum(sc.nextInt());
 			System.out.println(i+1+"번째 학생의 국어 점수를 입력하세요.");
-			student.kor = sc.nextInt();
+			student.setKor(sc.nextInt());
 			System.out.println(i+1+"번째 학생의 영어 점수를 입력하세요.");
-			student.eng = sc.nextInt();
+			student.setEng(sc.nextInt());
 			System.out.println(i+1+"번째 학생의 수학 점수를 입력하세요.");
-			student.math = sc.nextInt();
+			student.setMath(sc.nextInt());
 			
 //			student.total = student.kor + student.eng + student.math;
 //			student.avg = student.total/3.0;
 			student.setTotal();
 			students[i]=student;
 			
-			System.out.println(i+1+"번째 학생의 총점 : "+student.total+" | 평균 : "+student.avg);
+			System.out.println(i+1+"번째 학생의 총점 : " +student.getTotal()+" | 평균 : "+student.getAvg());
 			System.out.println("저장되었습니다.");
 			
 		}//for

@@ -12,7 +12,7 @@ public class Ex1Main3 {
 			Student st = new Student();
 			students[i]=st;
 			System.out.println("이름 입력");
-			students[i].name = sc.next();
+			students[i].setName(sc.next());
 		}
 
 	}

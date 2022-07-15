@@ -14,13 +14,13 @@ public class StudentView {
 	//ViewOne
 	//학생 한명의 정보를 받아서 모든 정보를 출력
 	public void view(Student student) {
-		System.out.println("이름 : "+student.name);
-		System.out.println("번호 : "+student.num);
-		System.out.println("국어 점수 : "+student.kor);
-		System.out.println("영어 점수 : "+student.eng);
-		System.out.println("수학 점수 : "+student.math);
-		System.out.println("총합 : "+student.total);
-		System.out.println("평균 : "+student.avg);
+		System.out.println("이름 : "+student.getName());
+		System.out.println("번호 : "+student.getNum());
+		System.out.println("국어 점수 : "+student.getKor());
+		System.out.println("영어 점수 : "+student.getEng());
+		System.out.println("수학 점수 : "+student.getMath());
+		System.out.println("총합 : "+student.getTotal());
+		System.out.println("평균 : "+student.getAvg());
 	}
 	
 	
@@ -33,10 +33,10 @@ public class StudentView {
 		//여러 학생의 정보를 배열로 묶어서 받아옴
 		
 		for(int i=0; i<students.length; i++) {
-			System.out.println("이름 : "+students [i].name);
-			System.out.println("번호 : "+students [i].num);
-			System.out.println("총합 : "+students [i].total);
-			System.out.println("평균 : "+students [i].avg);
+			System.out.println("이름 : "+students [i].getName());
+			System.out.println("번호 : "+students [i].getNum());
+			System.out.println("총합 : "+students [i].getTotal());
+			System.out.println("평균 : "+students [i].getAvg());
 		}
 		
 	}
