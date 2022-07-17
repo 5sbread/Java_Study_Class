@@ -4,9 +4,9 @@ import java.util.Scanner;
 import java.util.jar.Attributes.Name;
 
 public class StudentService {
+	Scanner sc = new Scanner(System.in);
 
 	public StudentService() {
-		sc = new Scanner(System.in);
 	}
 	
 	
@@ -16,35 +16,64 @@ public class StudentService {
 	//삭제하려는 학생의 번호를 입력
 	//학생의 번호와 일치하는 학생을 삭제
 	//남은 학생 정보 리턴
-	public void removestudent (Student[]students) {
-		System.out.println("삭제할 학생의 번호를 입력하세요.");
-		int select = sc.nextInt();
-		boolean flag = false;
-		String [] getNameCopy = null;
-		int [] getNumCopy = null;
-		int [] getKorCopy = null;
-		int [] getEngCopy = null;
-		int [] getMathCopy = null;
-		int [] getTotalCopy = null;
-		
-		for(int i=0; i<students.length; i++) {
-			if(select == getNum(i)){
-				flag =! flag;
-				break;
-			}
-		}
-		
-		
-	}
-	
+//	public void removestudent (Student[]students) {
+//		System.out.println("삭제할 학생의 번호를 입력하세요.");
+//		int select = sc.nextInt();
+//		boolean flag = false;
+//		String [] getNameCopy = null;
+//		int [] getNumCopy = null;
+//		int [] getKorCopy = null;
+//		int [] getEngCopy = null;
+//		int [] getMathCopy = null;
+//		int [] getTotalCopy = null;
+//		
+//		for(int i=0; i<students.length; i++) {
+//			if(select == getNum(i)){
+//				flag =! flag;
+//				break;
+//			}
+//		}
+//		
+//		
+//	}
+//	
 	
 //-----------------------------------	
 	//addstudent
 	//학생들의 정보를 받아서
 	//학생 한명 추가
 	//학생 정보들을 리턴
-	public void addstudent (Student [] students) {
-	
+	public void addstudent (Student [] students) { //학생 정보를 배열로 받음
+		
+		Student student = new Student(); //추가할 학생 한명 만들기
+		System.out.println("추가할 학생 이름을 입력하세요.");
+		student.setName(sc.next());
+		System.out.println("추가할 학생의 번호를 입력하세요.");
+		student.setNum(sc.nextInt());
+		System.out.println("추가할 학생의 국어 점수를 입력하세요.");
+		student.setKor(sc.nextInt());
+		System.out.println("추가할 학생의 영어 점수를 입력하세요.");
+		student.setEng(sc.nextInt());
+		System.out.println("추가할 학생의 수학 점수를 입력하세요.");
+		student.setMath(sc.nextInt());
+		student.setTotal();
+		
+		int le = students.length;
+		Student [] stuCopy = new Student[le+1]; //새 배열 생성
+		
+		for(int i=0; i<students.length; i++) {
+			stuCopy[i]=students[i]; //기존 정보 복사
+		}
+		
+		stuCopy[le+1] = student;
+		
+		System.out.println(le+1+"번째 학생의 총점 : " +student.getTotal()+" | 평균 : "+student.getAvg());
+//== 학생 추가 후 원래 배열에 값 다시 복사해 넣기
+		
+		for(int i=0; i<stuCopy.length; i++) {
+			students = stuCopy;
+		}
+		System.out.println("학생이 추가되었습니다.");
 		
 	}  
 	
@@ -54,7 +83,6 @@ public class StudentService {
 	//같은 번호의 학생을 찾아서 그 학생 한명을 리턴
 	//->studentView - viewOne로 보내서 출력
 	//학생이 없을 경우 -> viewMessage로 보내서 없음 출력
-	Scanner sc = new Scanner(System.in);
 
 	public Student findStudent (Student [] students/*매개변수*/) {
 		System.out.println("검색할 학생의 번호를 입력하세요.");

@@ -61,8 +61,8 @@ public class StudentController {
 				System.out.println("4");
 				break;
 			case 5:
-				System.out.println("5");
-				break;
+				studentService.addstudent(students);
+				
 			default:
 				System.out.println("종료 중");
 				check =! check;
