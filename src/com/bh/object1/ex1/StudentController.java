@@ -7,11 +7,12 @@ public class StudentController {
 		Scanner sc = new Scanner(System.in);
 
 		//객체 생성
-		StudentService studentService = new StudentService();
-		StudentView studentview = new StudentView();
+		//StudentService studentService = new StudentService();
+		StudentService studentService; //위랑 같은 문장
+		StudentView studentview;
 		
 		//변수 선언
-		Student [] students = null;
+		Student [] students;
 
 		public StudentController() {
 			sc = new Scanner(System.in);
